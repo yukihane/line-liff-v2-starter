@@ -9,4 +9,10 @@ app.get('/send-id', function(req, res) {
     res.json({id: myLiffId});
 });
 
+app.get("/basic", function(req, res) {
+  res.statusCode = 401;
+  res.setHeader("WWW-Authenticate", 'Basic realm="basic"');
+  res.end();
+});
+
 app.listen(port, () => console.log(`app listening on port ${port}!`));
