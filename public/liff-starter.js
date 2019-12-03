@@ -199,6 +199,12 @@ function registerButtonHandlers() {
             window.location.reload();
         }
     });
+
+    document.getElementById("async-link").addEventListener("click", (e) => {
+      e.preventDefault();
+      fetch("./basic").then(() => (location.href = "./send-id"));
+    });
+
 }
 
 /**
